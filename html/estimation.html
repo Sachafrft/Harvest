@@ -11,6 +11,7 @@
 </head>
 
 
+
 <body>
     <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
@@ -36,111 +37,92 @@
 
 
     <h3 class="h3 m-3 text-center text-success">Calculatrices <span class="badge bg-secondary">New</span></h3>
-    <form action="POST" class="m-3">
-        <h5 class="mx-2 h5">Votre entreprise:</h5>
-        <div class="border border-1 rounded-3 border-success">
-            <img src="../file/okok.png" class="position-static m-2 float-xl-end" alt="calc" width="200" height="290">
-            <div class="p-3">
-                <div class="row mb-3">
-                    <div class="col-auto">
-                        <label class="form-label">Ville :</label>
-                        <input type="text" class="form-control" placeholder="Paris" required>
-                    </div>
-                    <div class="col-auto">
-                        <label class="form-label">Code Postal :</label>
-                        <input type="number" class="form-control" placeholder="75001" required>
-                    </div>
+    <p class="m-3">
+    <h5 class="mx-2 h5">Votre entreprise:</h5>
+    <div class="border border-1 rounded-3 border-success">
+        <img src="../file/okok.png" class="position-static m-2 float-xl-end" alt="calc" width="200" height="290">
+        <div class="p-3">
+            <div class="row mb-3">
+                <div class="col-auto">
+                    <label class="form-label">Ville :</label>
+                    <input type="text" class="form-control" id="ville" placeholder="Paris" required>
                 </div>
-                <div class="row mb-3">
-                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                        <label class="btn btn-outline-success" for="btnradio1">Centre Ville - Rue premium</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-success" for="btnradio2">Centre Ville - Rue secondaire</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                        <label class="btn btn-outline-success" for="btnradio3">ZAC (Zone activité commerciale)</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                        <label class="btn btn-outline-success" for="btnradio4">Zone périphérique</label>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-auto">
-                        <label class="form-label">CA (12 derniers mois) "€":</label>
-                        <input type="number" class="form-control" placeholder="20000 €" required>
-                    </div>
-                    <div class="col-auto">
-                        <label class="form-label">Loyer - Hors Taxes charges comprises "€/an"</label>
-                        <input type="number" class="form-control" placeholder="3500 €" required>
-                    </div>
-                </div>
-                <div class="my-3">
-                    <button type="submit" class="end-0 btn btn-outline-success">Calculer</button>
+                <div class="col-auto">
+                    <label class="form-label">Code Postal :</label>
+                    <input type="number" class="form-control" id="codePostal" min="0" placeholder="75001" required>
                 </div>
             </div>
-        </div>
-    </form>
+            <div class="row mb-3">
+                <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
+                    <div class="btn-group">
+                        <input type="radio" class="btn-check" name="zoneActi" value="Centre Ville 1" id="btnradio1"
+                            autocomplete="off">
+                        <label class="btn btn-outline-success" for="btnradio1">Centre Ville - Rue premium</label>
 
-
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup">Afficher le
-        résultat</button>
-
-    <!-- Pop-up Resultat -->
-    <div id="popup" class="modal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p> Entête du pop-up </p>
-                </div>
-                <div class="modal-body">
-                    <div class="m-5">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-group-divider border-success">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <input type="radio" class="btn-check" name="zoneActi" value="Centre Ville 2" id="btnradio2"
+                            autocomplete="off">
+                        <label class="btn btn-outline-success" for="btnradio2">Centre Ville - Rue secondaire</label>
                     </div>
+                    <div class="btn-group">
+                        <input type="radio" class="btn-check" name="zoneActi" value="Zone peripherique" id="btnradio3"
+                            autocomplete="off">
+                        <label class="btn btn-outline-success" for="btnradio3">Zone périphérique</label>
+
+                        <input type="radio" class="btn-check" name="zoneActi" value="Zac" id="btnradio4"
+                            autocomplete="off">
+                        <label class="btn btn-outline-success" for="btnradio4">ZAC (Zone activité commerciale)</label>
+                    </div>
+
                 </div>
-                <div class="modal-footer">
-                    <p> Footer du pop-up</p>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer le popup</button>
+            </div>
+            <div class="row mb-3">
+                <div class="m-0">
+                    <label class="form-label">CA (12 derniers mois) "€":</label>
+                    <input type="number" class="form-control" id="ca" min="0" placeholder="20000 €" required>
                 </div>
+                <div>
+                    <label class="form-label">Loyer - Hors Taxes charges comprises "€/an" :</label>
+                    <input type="number" class="form-control" id="loyer" min="0" placeholder="3500 €" required>
+                </div>
+                <div class="my-3">
+                    <label class="form-label">Secteur d'activité</label>
+                    <select class="form-select" id="secteurActi" aria-label="Default select example">
+                        <option value="null" selected>Selectionnez un secteur</option>
+                        <option value="Agence Matrimoniale">Agence Matrimoniale</option>
+                        <option value="Ameublement-Equipement du Foyer">Ameublement-Equipement du Foyer</option>
+                        <option value="Animalerie-Aquariophilie-Oisellerie">Animalerie-Aquariophilie-Oisellerie</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" onclick="calc_Esti_FondCommerce()"
+                    class="end-0 btn btn-outline-success">Calculer</button>
             </div>
         </div>
     </div>
+    </p>
 
+    <div class="Resultat" id="Resultat"></div>
 
-    
+    <!-- CARD REPONSE 5/5
+        
+    <div class="card border-success mb-3" style="margin-left: auto;margin-right: auto; max-width: 25rem;">
+        <div class="card-header text-bg-success">Estimation de votre fond de commerce</div>
+        <div class="card-body">
+            <h5 class="card-title">Note de confiance : 5/5</h5>
+            <p class="card-text"> VARIABLE DE CALCUL : ESTIMATION<br>
+                <i>Si vous souhaiter avoir des conseils et des precisions sur nos calculs n'hesitez
+                    pas à nous contacter :</i>
+            </p>
+            <a href="#registration" class="btn btn-primary">Envoyez nous un message</a>
+        </div>
+        <img src="../file/Calculatrice3.png" class="card-img-bottom" alt="calculette">
+
+    </div> -->
 
     <hr class="border border-success border-1 opacity-50">
 
-    <form action="POST" class="m-3">Nous contacter :
+    <form action="POST" id="registration" class="m-3">Nous contacter :
         <div class="border border-1 rounded-3 border-success">
             <div class="p-3">
                 <div class="row">
@@ -178,12 +160,13 @@
             </div>
         </div>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="../script.js"></script>
 </body>
 
 <footer class="text-center bg-dark text-white">
@@ -336,4 +319,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+
 </html>
